@@ -6,6 +6,7 @@ import Entity.*;
 import Exceptions.BusinessException;
 import Exceptions.EntityNotFoundException;
 import Factory.LoanFactory;
+import Factory.LoanIdFactory;
 import Repository.IBookRepository;
 import Repository.ILoanRepository;
 import Repository.IMemberRepository;

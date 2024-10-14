@@ -25,4 +25,11 @@ public class MemberId {
     public int hashCode() {
         return value.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "MemberId{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }

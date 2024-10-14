@@ -75,4 +75,16 @@ public class Loan {
     public int hashCode() {
         return id.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "id=" + id +
+                ", book=" + book +
+                ", member=" + member +
+                ", loanDate=" + loanDate +
+                ", loanExpectedReturnDate=" + loanExpectedReturnDate +
+                ", loanReturnDate=" + loanReturnDate +
+                '}';
+    }
 }

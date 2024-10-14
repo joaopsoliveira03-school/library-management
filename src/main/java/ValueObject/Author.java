@@ -36,4 +36,12 @@ public class Author {
         result = 31 * result;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", nationality='" + nationality + '\'' +
+                '}';
+    }
 }

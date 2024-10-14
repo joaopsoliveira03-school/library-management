@@ -5,7 +5,7 @@ import Entity.ISBN;
 import ValueObject.Author;
 
 public class BookFactory {
-    public static Book createBook(String title, Author author) {
-        return new Book(ISBNFactory.createISBN(), title, author);
+    public static Book createBook(ISBN isbn, String title, Author author) {
+        return new Book(isbn, title, author);
     }
 }

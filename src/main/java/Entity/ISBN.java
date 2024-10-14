@@ -15,7 +15,7 @@ public class ISBN {
     }
 
     private boolean isValid(String isbn) {
-        return isbn.matches("^(97([89]))?\\d{9}(\\d|X)$"); // example: 978-3-16-148410-0
+        return isbn.matches("^(97([89]))\\d{9}(\\d|X)$");
     }
 
     @Override
@@ -31,5 +31,12 @@ public class ISBN {
     @Override
     public int hashCode() {
         return value.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "ISBN{" +
+                "value='" + value + '\'' +
+                '}';
     }
 }

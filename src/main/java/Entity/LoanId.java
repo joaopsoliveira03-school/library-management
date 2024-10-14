@@ -25,4 +25,11 @@ public class LoanId {
     public int hashCode() {
         return value.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "LoanId{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }

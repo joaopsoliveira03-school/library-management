@@ -52,4 +52,13 @@ public class Book {
         result = 31 * result + author.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "isbn=" + isbn +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                '}';
+    }
 }
