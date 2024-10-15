@@ -1,4 +1,4 @@
-package DomainPolicy;
+package Policy;
 
 import Aggregate.Loan;
 import Entity.Member;

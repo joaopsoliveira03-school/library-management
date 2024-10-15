@@ -1,4 +1,4 @@
-package DomainService;
+package Service;
 
 import Entity.Book;
 import Entity.ISBN;

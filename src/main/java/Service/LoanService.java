@@ -1,12 +1,12 @@
-package DomainService;
+package Service;
 
 import Aggregate.Loan;
-import DomainEvent.LoanedBookEvent;
+import Event.EventBus;
+import Event.LoanedBookEvent;
 import Entity.*;
 import Exceptions.BusinessException;
 import Exceptions.EntityNotFoundException;
 import Factory.LoanFactory;
-import Factory.LoanIdFactory;
 import Repository.IBookRepository;
 import Repository.ILoanRepository;
 import Repository.IMemberRepository;
@@ -46,8 +46,18 @@ public class LoanService {
         Loan loan = LoanFactory.createLoan(book, member);
         ILoanRepository.save(loan);
 
-        LoanedBookEvent loanedBookEvent = new LoanedBookEvent(loan.getBook().getIsbn().getValue(), loan.getMember().getId().getValue());
-        loanedBookEvent.publish();
+        EventBus.getInstance().publish(new LoanedBookEvent(loan.getBook().getIsbn().getValue(), loan.getMember().getId().getValue()));
+
+        return loan;
+    }
+
+    public Loan returnLoan(LoanId loanId) {
+        Loan loan = ILoanRepository.findById(loanId)
+                .orElseThrow(() -> new EntityNotFoundException("Loan not found"));
+
+        loan.returnBook();
+
+        //ILoanRepository.save(loan);
 
         return loan;
     }

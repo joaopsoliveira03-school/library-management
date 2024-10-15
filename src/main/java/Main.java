@@ -1,7 +1,7 @@
 import Aggregate.Loan;
-import DomainService.BookService;
-import DomainService.LoanService;
-import DomainService.MemberService;
+import Service.BookService;
+import Service.LoanService;
+import Service.MemberService;
 import Entity.Book;
 import Entity.ISBN;
 import Entity.Member;
@@ -46,6 +46,14 @@ public class Main {
         // Create Loans (Aggregate)
         Loan loan1 = loanService.createLoan(book1.getIsbn(), member1.getId());
         Loan loan2 = loanService.createLoan(book2.getIsbn(), member2.getId());
+
+        // Print Loans (testing purposes)
+        System.out.println(loan1);
+        System.out.println(loan2);
+
+        // Return Loans (Aggregate)
+        loanService.returnLoan(loan1.getId());
+        loanService.returnLoan(loan2.getId());
 
         // Print Loans (testing purposes)
         System.out.println(loan1);

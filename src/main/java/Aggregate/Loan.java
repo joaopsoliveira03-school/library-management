@@ -19,7 +19,7 @@ public class Loan {
         this.book = book;
         this.member = member;
         this.loanDate = LocalDate.now();
-        this.loanReturnDate = loanDate.plusDays(14);
+        this.loanExpectedReturnDate = loanDate.plusDays(14);
     }
 
     public void extendReturnDate(int days) {
